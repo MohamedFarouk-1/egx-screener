@@ -138,8 +138,10 @@ export default function App() {
 
       <footer className="border-t border-gray-200 py-4 mt-8">
         <div className="max-w-screen-2xl mx-auto px-4 text-xs text-gray-400 text-center">
-          EGX Upside Screener — Data via Yahoo Finance (yfinance) · Quantitative scores only, not investment advice ·
-          Prices in EGP · EGX data may lag 1–2 quarters vs EFSA Arabic filings
+          EGX Upside Screener — Quantitative scores only, not investment advice · Prices in EGP ·{' '}
+          {data?.data_source !== 'live'
+            ? 'Data source: stockanalysis.com (Mar 2026). Live data temporarily unavailable due to Yahoo Finance rate limits.'
+            : 'Data via Yahoo Finance (yfinance) · EGX data may lag 1–2 quarters vs EFSA Arabic filings'}
         </div>
       </footer>
     </div>

@@ -50,6 +50,12 @@ export default function Header({ meta, loading }) {
                 {lastUpdated && (
                   <MetaStat label="Updated" value={lastUpdated} />
                 )}
+                {meta.data_source && (
+                  <MetaStat
+                    label="Data"
+                    value={meta.data_source === 'live' ? '🟢 Live' : '🟡 Static (Mar 2026)'}
+                  />
+                )}
                 <a
                   href="/api/screener/csv"
                   className="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-400 text-white px-3 py-1.5 rounded text-xs font-medium transition-colors"
